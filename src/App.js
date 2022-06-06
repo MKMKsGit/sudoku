@@ -3,7 +3,7 @@ import "./App.css";
 // url for api
 // https://us-central1-skooldio-courses.cloudfunctions.net/react_01/random
 
-const validate = board => {
+const validate = (board) => {
   let isValid = true;
   for (let i = 0; i < 4; i++) {
     const horizontal = new Set();
@@ -58,12 +58,13 @@ class Board extends Component {
       [true, false, true, false],
       [true, false, false, true],
     ],
-    statusText: ''
+    statusText: "test"
   };
-  submit() {
-    const isValid = validate(this.state.board);
-    this.setState({statusText: isValid ? 'Board is complete!!': 'Board is invalid'})
-  };
+  // submit() {
+  //   // const isValid = validate(this.state.board);
+  //   const isValid = true;
+  //   this.state.setState({ statusText: isValid ? 'Board is complete!' : 'Board is invalid' });
+  // };
   render() {
     return (
       <div>
@@ -85,7 +86,10 @@ class Board extends Component {
             ))
           )}
         </div>
-        <button onClick={this.submit}>Submit</button>
+        <button onClick={() => {
+          const isValid = validate(this.state.board);
+          this.setState({ statusText: isValid ? 'Board is complete!' : 'Board is invalid' });
+        }}>Submit</button>
         <p>{this.state.statusText}</p>
       </div>
     );

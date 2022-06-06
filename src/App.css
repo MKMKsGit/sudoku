@@ -118,6 +118,7 @@ button {
   font-size: 25px;
   border-radius: 5px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .timer {
