@@ -58,10 +58,11 @@ class Board extends Component {
       [true, false, true, false],
       [true, false, false, true],
     ],
-    statusText: 'test'
+    statusText: ''
   };
   submit() {
     const isValid = validate(this.state.board);
+    this.setState({statusText: isValid ? 'Board is complete!!': 'Board is invalid'})
   };
   render() {
     return (
