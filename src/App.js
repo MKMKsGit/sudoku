@@ -1,23 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+// url for api
+// https://us-central1-skooldio-courses.cloudfunctions.net/react_01/random
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App">
+        <div className="board">
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+          <div className="cell">1</div>
+        </div>
+      </div>
     </div>
   );
 }
