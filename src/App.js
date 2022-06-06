@@ -12,12 +12,34 @@ class Cell extends Component {
       <div
         onClick={(e) => {
           this.setState({
-            number: (this.state.number + 1) % 5
+            number: (this.props.number + 1) % 5,
           });
         }}
-        className="cell"
+        className={`cell ${this.props.isInitial ? "initial" : ""}`}
       >
-        {this.state.number != 0 && this.state.number}
+        {this.props.number !== 0 && this.props.number}
+      </div>
+    );
+  }
+}
+
+class Board extends Component {
+  state = {
+    board: [
+      [1, 2, 3, 4],
+      [1, 2, 3, 4],
+      [1, 2, 3, 4],
+      [1, 2, 3, 4],
+    ],
+  };
+  render() {
+    return (
+      <div className="board">
+        {this.state.board.map((row, i) =>
+          row.map((number, j) => (
+            <Cell key={`cell-${i}-${j}`} number={number} />
+          ))
+        )}
       </div>
     );
   }
@@ -27,24 +49,7 @@ function App() {
   return (
     <div className="App">
       <div className="App">
-        <div className="board">
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-        </div>
+        <Board />
       </div>
     </div>
   );
